@@ -34,7 +34,6 @@ pluggy==0.8.0
 py==1.7.0
 pycparser==2.19
 pycrypto==2.6.1
-pygobject==3.26.1
 pylint==1.9.3
 pyOpenSSL==18.0.0
 pytest==3.9.1
