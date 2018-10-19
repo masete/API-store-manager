@@ -33,7 +33,7 @@ class ProductsModel:
                 if product.get('product_id') == product_id:
                     return jsonify(product), 200
         
-        return jsonify({"status":"Not Found", "message":"File doesnot exist on server"}), 404   
+        return jsonify({"status":"Not Found", "message":"File doesnot exist on server"}), 404    
 
 
     @staticmethod
@@ -42,4 +42,4 @@ class ProductsModel:
         newProductList = []
         ProductsModel.productList.append(newProduct)
         newProductList = ProductsModel.productList
-        return jsonify({"status": "Created", "message" : "You have created a product", "product":newProduct}), 200    
+        return jsonify({"status": "Created", "message" : "You have created a product", "product":newProduct}), 200

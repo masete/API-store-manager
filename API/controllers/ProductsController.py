@@ -9,7 +9,9 @@ class ProductsController(MethodView):
         if product_id == None:
             return jsonify(ProductsModel.getProducts()), 200
 
-        return ProductsModel.getProducts(product_id)    
+        return ProductsModel.getProducts(product_id)
+        
+
     def post(self):
         postProduct = request.get_json()
         
@@ -28,4 +30,4 @@ class ProductsController(MethodView):
             else:
                 return jsonify({"status":"Bad Request","message": "Products id and price field should be an integer"}), 400
         else:
-            return jsonify({"status":"Bad Request","message": "No field is expected to be empty"}), 400    
+            return jsonify({"status":"Bad Request","message": "No field is expected to be empty"}), 400
