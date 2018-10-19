@@ -1,11 +1,11 @@
 from unittest import TestCase
 from flask import json
-from run import APP
+from run import app
 
 class Tests(TestCase):
 
     def setUp(self):
-        self.app = APP
+        self.app = app
         self.client = self.app.test_client
 
     def add_prod(self, product_id, product, price):

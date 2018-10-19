@@ -12,7 +12,7 @@ class Server:
         Routes.generate(app)
         return app
 
-APP = Server().create_app()
+app = Server().create_app()
 
 if __name__=='__main__':
-    APP.run(debug=False)
+    app.run(debug=False)
