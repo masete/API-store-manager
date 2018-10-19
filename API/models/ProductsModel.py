@@ -28,3 +28,18 @@ class ProductsModel:
     def getProducts(product_id = None):
         if product_id == None:
             return ProductsModel.productsData()
+        else:
+            for product in ProductsModel.productsData():
+                if product.get('product_id') == product_id:
+                    return jsonify(product), 200
+        
+        return jsonify({"status":"Not Found", "message":"File doesnot exist on server"}), 404   
+
+
+    @staticmethod
+    def createProduct(newProduct):
+        ProductsModel.productList = ProductsModel.productsData()
+        newProductList = []
+        ProductsModel.productList.append(newProduct)
+        newProductList = ProductsModel.productList
+        return jsonify({"status": "Created", "message" : "You have created a product", "product":newProduct}), 200    
